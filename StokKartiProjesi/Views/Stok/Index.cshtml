@@ -1,0 +1,150 @@
+﻿@model IEnumerable<StokKartiProjesi.Models.Stok>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@*<button id="j1">Jquery</button>
+<script src="~/Scripts/jquery-3.5.1.js"></script>
+<script>
+    $("#j1").click(function ()){
+        
+    }
+</script>*@
+
+<p>
+    <a asp-action="Create">Create New</a> 
+     <a asp-area="" asp-controller="Satislar" asp-action="Index">Hareketler</a>
+    
+     
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StokID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StokNO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StokAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StokBarkod)
+            </th>
+            @*  <th>
+                @Html.DisplayNameFor(model => model.GirenAdet)
+            </th>
+              <th>
+                @Html.DisplayNameFor(model => model.CikanAdet)
+            </th>
+           
+             <th>
+                @Html.DisplayNameFor(model => model.StokAdet)
+            </th>*@
+
+            <th>
+                @Html.DisplayNameFor(model => model.StokAciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Birim)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.KDV)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fiyat5)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StokID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StokNO)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StokAdi)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.StokBarkod)
+            </td>
+          @*  //<script>
+            //    $(function () {
+            //        $.get("Stok/Index", function (stok_ad ));
+            //        int alis = @ViewBag.alisToplam;
+            //        int satis = @ViewBag.satisToplam;
+            //        int son = @ViewBag.toplamHareket;
+            //    })
+            //</script>*@
+      @*      @{
+                    int alis = @ViewBag.alisToplam;
+                    int satis = @ViewBag.satisToplam;
+                    int son = @ViewBag.toplamHareket + Convert.ToInt32(item.StokAdet);
+                    
+            }
+             <td>
+                @Html.DisplayFor(modelItem => @alis)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => @satis)
+            </td>     
+             <td>
+                @Html.DisplayFor(modelItem => @son)
+            </td>
+                }*@
+             
+            <td>
+                @Html.DisplayFor(modelItem => item.StokAciklama)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Birim)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KDV)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fiyat5)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id=item.StokID}) |
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @Html.ActionLink("Delete", "Delete", new { id=item.StokID})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+

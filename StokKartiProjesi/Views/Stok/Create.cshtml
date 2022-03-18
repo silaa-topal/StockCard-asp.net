@@ -1,0 +1,88 @@
+﻿@model StokKartiProjesi.Models.Stok
+
+@{
+    ViewData["Title"] = Model == null? "Create" : "Edit";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<h4>Stok</h4>   
+<hr />
+<div class="row">
+    <div class="col-md-6">
+        <form asp-controller="Stok" asp-action="@ViewData["Title"]" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StokID" class="control-label"></label>
+                <input asp-for="StokID" class="form-control" />
+                <span asp-validation-for="StokID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StokNO" class="control-label"></label>
+                <input asp-for="StokNO" class="form-control" />
+                <span asp-validation-for="StokNO" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StokAdi" class="control-label"></label>
+                <input asp-for="StokAdi" class="form-control" />
+                <span asp-validation-for="StokAdi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StokBarkod" class="control-label"></label>
+                <input asp-for="StokBarkod" class="form-control" />
+                <span asp-validation-for="StokBarkod" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StokAciklama" class="control-label"></label>
+                <input asp-for="StokAciklama" class="form-control" />
+                <span asp-validation-for="StokAciklama" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Birim" class="control-label"></label>
+                <input asp-for="Birim" class="form-control" />
+                <span asp-validation-for="Birim" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="KDV" class="control-label"></label>
+                <input asp-for="KDV" class="form-control" />
+                <span asp-validation-for="KDV" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat1" class="control-label"></label>
+                <input asp-for="Fiyat1" class="form-control" />
+                <span asp-validation-for="Fiyat1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat2" class="control-label"></label>
+                <input asp-for="Fiyat2" class="form-control" />
+                <span asp-validation-for="Fiyat2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat3" class="control-label"></label>
+                <input asp-for="Fiyat3" class="form-control" />
+                <span asp-validation-for="Fiyat3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat4" class="control-label"></label>
+                <input asp-for="Fiyat4" class="form-control" />
+                <span asp-validation-for="Fiyat4" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Fiyat5" class="control-label"></label>
+                <input asp-for="Fiyat5" class="form-control" />
+                <span asp-validation-for="Fiyat5" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Listeye Geri Dön</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,73 @@
+﻿@model IEnumerable<StokKartiProjesi.Models.Satis>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+     <a asp-area="" asp-controller="Stok" asp-action="Index">Stoklar</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+         @*   <th>
+                @Html.DisplayNameFor(model => model.SatisID)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.IslemTipi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tarih)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miktar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BirimFiyatı)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToplamFiyat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stok.StokAdi)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IslemTipi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tarih)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Miktar)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BirimFiyatı)
+            </td>
+                @{
+                    var ToplamFiyat = 0;
+                    ToplamFiyat = item.BirimFiyatı * item.Miktar;
+                }
+            <td>
+                @Html.DisplayFor(modelItem => @ToplamFiyat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Stok.StokAdi)
+            </td>
+          @*  <td>
+                <a asp-action="Edit" asp-route-id="@item.SatisID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.SatisID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.SatisID">Delete</a>
+            </td>*@
+        </tr>
+}
+    </tbody>
+</table>
